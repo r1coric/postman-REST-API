@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "3db8340d-269a-4430-99d0-a0ac945cdeb7",
+		"name": "Renue",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28992027",
+		"_collection_link": "https://restless-star-211561.postman.co/workspace/podgotovka~79389bf4-0769-4fc7-8849-dba516571120/collection/28992027-3db8340d-269a-4430-99d0-a0ac945cdeb7?action=share&source=collection_link&creator=28992027"
+	},
+	"item": [
+		{
+			"name": "token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"username\": \"user\",\n\"password\": \"user\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://intership-study.k.renue.ru/authenticate",
+					"protocol": "https",
+					"host": [
+						"intership-study",
+						"k",
+						"renue",
+						"ru"
+					],
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create organization",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNzQzNjk2MDE4LCJpYXQiOjE3NDM2NzgwMTh9.L9ABlPpqifEEgJgHuHclVL9gEztyHnUeNa_DbkN-8Y3KtG_AuOWnTWmY8AZ7YULhZtKzYQdW5QVOSgYeDoXJpg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNzQzNjk2MDE4LCJpYXQiOjE3NDM2NzgwMTh9.L9ABlPpqifEEgJgHuHclVL9gEztyHnUeNa_DbkN-8Y3KtG_AuOWnTWmY8AZ7YULhZtKzYQdW5QVOSgYeDoXJpg",
+						"description": "Токен аутентификации",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"name\": \"Северная электрическая таможня\",\n\"inn\": \"587652180351\",\n\"ogrn\": \"1072072854113\",\n\"address\": \"ул. Гетсби, дом 21\",\n//\"phone\": \"+79864935259\",\n\"head\": [\n\t{\n\"firstName\": \"Алексей\",\n//\"middleName\": \"Романович\",\n\"lastName\": \"Воронов\"\n\t}\n]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://intership-study.k.renue.ru/api/v1/de/organization",
+					"protocol": "https",
+					"host": [
+						"intership-study",
+						"k",
+						"renue",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"de",
+						"organization"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get organization",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNzQzNjk2MDE4LCJpYXQiOjE3NDM2NzgwMTh9.L9ABlPpqifEEgJgHuHclVL9gEztyHnUeNa_DbkN-8Y3KtG_AuOWnTWmY8AZ7YULhZtKzYQdW5QVOSgYeDoXJpg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNzQzNjk2MDE4LCJpYXQiOjE3NDM2NzgwMTh9.L9ABlPpqifEEgJgHuHclVL9gEztyHnUeNa_DbkN-8Y3KtG_AuOWnTWmY8AZ7YULhZtKzYQdW5QVOSgYeDoXJpg",
+						"description": "Токен аутентификации",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "f998005b-5b2a-4d91-a58a-594b90ac2ee8",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://intership-study.k.renue.ru/api/v1/de/organization/f998005b-5b2a-4d91-a58a-594b90ac2ee8",
+					"protocol": "https",
+					"host": [
+						"intership-study",
+						"k",
+						"renue",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"de",
+						"organization",
+						"f998005b-5b2a-4d91-a58a-594b90ac2ee8"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{vault:authorization-secret}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "f998005b-5b2a-4d91-a58a-594b90ac2ee8",
+			"type": "string"
+		}
+	]
+}
